@@ -32,7 +32,7 @@ function MessageArea() {
   const handleSendMessage = async (e) => {
     e.preventDefault()
     // no image has been selected to send 
-    if(input.length == 0 && backendImage == null){
+    if(!input?.length && !backendImage){
       return
     }
     try {
