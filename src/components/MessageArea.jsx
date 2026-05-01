@@ -21,7 +21,7 @@ function MessageArea() {
   let {selectedUser, userData, socket} = useSelector(state=>state.user)
   let dispatch = useDispatch()
   let [emoji, setEmoji] = useState(false);
-  let [input, setInput] = useState()
+  let [input, setInput] = useState("")
   let [frontendImage, setFrontendImage] = useState(null)
   let [backendImage, setBackendImage] = useState(null)
   //  Reference to the hidden file input.
