@@ -14,7 +14,9 @@ function SenderMessage({image, message}) {
   // gets your logged-in user's info from Redux, including their profile photo.
   let {userData} = useSelector(state=>state.user)
   // Any time a message (or image) appears, makes the page automatically scroll to this message.
-  scroll.current.scrollIntoView({behavior:"smooth"})
+ useEffect(()=>{
+  scroll.current?.scrollIntoView({behavior:"smooth"})
+}, [message, image])
 
   const handleImageScroll = () => {
     scroll?.current.scrollIntoView({behavior:"smooth"})
