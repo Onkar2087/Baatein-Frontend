@@ -74,12 +74,19 @@ function MessageArea() {
   // When a new message is received on the socket, pushes it to Redux.
   // Cleans up the socket listener when the component unmounts.
   // Updating newMessages array
-  useEffect(()=>{
-    socket.on("newMessage", (mess)=>{
-      dispatch(setMessages([...messages, mess]))
-    })
-    return ()=>socket.off("newMessage")
-  }, [messages, setMessages])
+ useEffect(() => {
+  if (!socket) return;
+
+  const handler = (mess) => {
+    dispatch(setMessages(mess)); // add single message
+  };
+
+  socket.on("newMessage", handler);
+
+  return () => {
+    socket.off("newMessage", handler);
+  };
+}, [socket]);
 
   return (
     <div className={`lg:w-[70%] ${selectedUser? "flex":"hidden"}  md:flex w-full h-full bg-slate-200 border-l-2 border-gray-300`}>
