@@ -50,7 +50,7 @@ function Sidebar() {
     }
     const handleSearch = async () => {
       try {
-        let result = await axios.get(`${serverurl}/api/user/search?query = ${input}`, {withCredentials:true})
+        let result = await axios.get(`${serverurl}/api/user/search?query=${input}`, {withCredentials:true})
         dispatch(setSearchData(result.data))
         
     
