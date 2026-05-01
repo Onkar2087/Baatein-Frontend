@@ -10,6 +10,9 @@ import getOtherUsers from './customHooks/getOtherUsers'
 import {io} from "socket.io-client"
 import { serverurl } from './main'
 import { setOnlineUsers, setSocket } from './redux/userSlice'
+import axios from "axios"
+
+axios.defaults.withCredentials = true
 
 function App() {
   // Jaise hi user aayega - redux devtools mei data aa jayega
