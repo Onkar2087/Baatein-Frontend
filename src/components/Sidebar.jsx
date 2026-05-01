@@ -125,7 +125,7 @@ function Sidebar() {
 
             <div className='flex gap-[20px]'>
               {!search && otherUsers?.map((user)=>(
-                onlineUsers.includes(user._id) &&
+                onlineUsers?.includes(user._id) &&
               <div className='relative rounded-full shadow-gray-500 bg-white shadow-lg flex justify-center items-center mt-[10px] cursor-pointer'
               onClick={()=>dispatch(setSelectedUser(user))}>
               <div className='w-[60px] h-[60px] rounded-full flex justify-center items-center shadow-gray-500 shadow-lg bg-white'>
