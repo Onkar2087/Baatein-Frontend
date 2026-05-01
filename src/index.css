@@ -1,0 +1,11 @@
+/* Removing scrollbar - everywhere */
+@import "tailwindcss";
+
+::-webkit-scrollbar{
+    display:none;
+}
+
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
